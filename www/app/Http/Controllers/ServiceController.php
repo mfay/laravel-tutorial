@@ -37,8 +37,13 @@ class ServiceController extends Controller
 		$this->validate($request, [
 			'email' => 'required',
 			'name' => 'required'
-		]);
-		return 'you will get more spam than you know what to do with!!!!';
+        ]);
+        if ($request->hasFile('cover_image')) {
+            $file = $request->file('cover_image');
+            $file->getMimeType();
+            return view('service.thankyou')->with('mime_type', $file->getMimeType());
+        }
+        return view('service.thankyou')->with('mime_type', 'wtf!?');
     }
 
     /**

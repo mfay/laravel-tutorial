@@ -15,3 +15,6 @@ services:
       image: mysql
       environment:
         - MYSQL_ROOT_PASSWORD=toor
+        - MYSQL_DATABASE=homestead
+        - MYSQL_USER=bob
+        - MYSQL_PASSWORD=bob

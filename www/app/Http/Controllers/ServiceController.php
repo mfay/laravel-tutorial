@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ServiceController extends Controller
 {
@@ -13,6 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
+		$user = User::all();
 		return view('service.index');
     }
 
